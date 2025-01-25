@@ -128,7 +128,7 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
+backend/django_freelance/.env
 .venv
 env/
 venv/
@@ -169,3 +169,5 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+D:\projects\freelance-exchange\backend\django_freelance\.env
