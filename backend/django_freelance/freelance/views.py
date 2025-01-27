@@ -20,35 +20,38 @@ class Logout(APIView):
         return Response(status=status.HTTP_200_OK)
 
 
+""" Executor """
+
 class ExecutorRetrieveView(generics.RetrieveAPIView):
     queryset = Executor.objects.all()
     serializer_class = ExecutorSerializer
-    # permission_class = permissions.IsAuthenticatedOrReadOnly
-
+    permission_class = permissions.IsAuthenticatedOrReadOnly
 
 class ExecutorUpdateView(generics.UpdateAPIView):
     queryset = Executor.objects.all()
     serializer_class = CreateExecutorSerializer
-    # permission_classes = (IsExecutor,)
+    permission_classes = (IsExecutor,)
 
-    # def get_queryset(self):
-    #     user = self.request.user
+    def get_queryset(self):
+        user = self.request.user
 
-    #     if user.is_authenticated:
-    #         return Executor.objects.filter(user=user)
+        if user.is_authenticated:
+            return Executor.objects.filter(user=user)
 
-    #     raise PermissionDenied()
-
+        raise PermissionDenied()
 
 class ExecutorCreateView(generics.CreateAPIView):
     queryset = Executor.objects.all()
     serializer_class = CreateExecutorSerializer
-
+    permission_class = permissions.IsAuthenticatedOrReadOnly
 
 class ExecutorListView(generics.ListAPIView):
     queryset = Executor.objects.all()
     serializer_class = ExecutorSerializer
+    permission_class = permissions.IsAuthenticatedOrReadOnly
 
+
+""" Customer """
 
 class CustomerRetrieveView(generics.RetrieveAPIView):
     queryset = Customer.objects.all()
@@ -58,7 +61,6 @@ class CustomerRetrieveView(generics.RetrieveAPIView):
 class CustomerUpdateView(generics.UpdateAPIView):
     queryset = Customer.objects.all()
     serializer_class = CreateCustomerSerializer
-    # permission_class = permissions.IsAuthenticatedOrReadOnly
 
 
 class CustomerCreateView(generics.CreateAPIView):
@@ -70,6 +72,8 @@ class CustomerListView(generics.ListAPIView):
     queryset = Customer.objects.all()
     serializer_class = CustomerSerializer
 
+
+""" Order """
 
 class OrderRetrieveView(generics.RetrieveAPIView):
     queryset = Order.objects.all()

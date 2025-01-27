@@ -44,8 +44,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'freelance',
     'rest_framework',
+    'rest_framework.authtoken',
     'djoser',
     'corsheaders',
+    # 'oauth2_provider',
+    # 'social_django',
+    # 'rest_framework_social_oauth2',
 ]
 
 MIDDLEWARE = [
@@ -129,6 +133,17 @@ CORS_ALLOW_METHODS = (
     "POST",
     "PUT",
 )
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny', #IsAuthenticated - авторизация для всех
+    ],
+}
+
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
