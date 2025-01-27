@@ -134,6 +134,7 @@ CORS_ALLOW_METHODS = (
     "PUT",
 )
 
+#для 'rest_framework.authtoken' в INSTALLED_APPS
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
@@ -143,6 +144,19 @@ REST_FRAMEWORK = {
     ],
 }
 
+# для JWT Token
+# REST_FRAMEWORK = {
+#     'DEFAULT_AUTHENTICATION_CLASSES': [
+#         'rest_framework.authentication.SessionAuthentication',
+#         'rest_framework_simplejwt.authentication.JWTAuthentication'
+#     ],
+#     'DEFAULT_PERMISSION_CLASSES': [
+#         'rest_framework.permissions.IsAuthenticated',
+#     ],
+#     'DEFAULT_PARSER_CLASSES': [
+#         'rest_framework.parsers.JSONParser'
+#     ]
+# }
 
 
 # Internationalization

@@ -55,3 +55,7 @@ cd vue_freelance
 npm run serve
 ```
 Теперь приложение должно быть доступно по адресу http://localhost:8080 для frontend и http://localhost:8000 для backend.
+
+
+![img_1.png](img_1.png)
+![img.png](img.png)
