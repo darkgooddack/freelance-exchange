@@ -4,7 +4,6 @@
 
 ## Стек технологий
 
-- Vue 3
 - Django Rest Framework
 - PostgreSQL
 
