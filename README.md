@@ -7,8 +7,6 @@
 - Vue 3
 - Django Rest Framework
 - PostgreSQL
-- 
-
 
 ## Установка
 
@@ -20,19 +18,13 @@ git clone https://github.com/yourusername/your-repository.git
 ```
 cd freelance-exchange
 ```
-3. Установите зависимости для backend:
+3. Установите зависимости:
 ```
 cd backend
 cd django_freelance
 pip install -r requirements.txt
 ```
-4. Установите зависимости для frontend:
-```
-cd frontend
-cd vue_freelance
-npm install
-```
-5. Настройте PostgreSQL:
+4. Настройте PostgreSQL:
 ```
 CREATE DATABASE freelance_exchange;
 ```
@@ -41,21 +33,14 @@ CREATE DATABASE freelance_exchange;
 python manage.py makemigrations
 python manage.py migrate 
 ```
-6. Запуск приложения
+5. Запуск приложения
 Для запуска backend (Django Rest Framework):
 ```
 cd backend
 cd django_freelance
 python manage.py runserver
 ```
-Для запуска frontend (Vue 3):
-```
-cd frontend
-cd vue_freelance
-npm run serve
-```
-Теперь приложение должно быть доступно по адресу http://localhost:8080 для frontend и http://localhost:8000 для backend.
+Теперь приложение должно быть доступно по адресу http://localhost:8000.
 
-
-![img_1.png](img_1.png)
+## Проверка запроса через Postman
 ![img.png](img.png)
